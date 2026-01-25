@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 echo "Printing the current user"
 whoami
 echo "Printing the current user directory"
