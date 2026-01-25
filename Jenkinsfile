@@ -1,7 +1,7 @@
 pipeline{
     agent any
     environment{
-        DOCKER='"C:\Program Files\Docker\Docker\resources\bin\docker.exe"'
+        DOCKER='"C:/Program Files/Docker/Docker/resources/bin/docker.exe"'
     }
     stages{
         stage('Building the application'){
