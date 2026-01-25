@@ -2,4 +2,4 @@ FROM alpine
 WORKDIR /app
 COPY script.sh .
 RUN chmod +x script.sh
-CMD ["/app/script.sh"]
+CMD ["sh","/app/script.sh"]
