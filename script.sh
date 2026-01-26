@@ -20,5 +20,3 @@ echo "Killing the random safe process"
 kill "$pid"
 echo "Printing the processes"
 ps
-echo "Printing the current running processes"
-ps -a
