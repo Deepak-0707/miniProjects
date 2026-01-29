@@ -8,11 +8,11 @@ The goal was to understand the real world CI behaviour,container execution,proce
 - Git Hub
 - Bash Scripts
 ### Pipeline Flow
-1.Jenkins checks out the repository from GitHub.
-2.Docker image is built using Ubuntu 22.04.
-3.Shell script is copied and made executable.
-4.Line ending normalization is enforced for Linux compatibility.
-5.Container is executed and the script runs inside it.
+1.Jenkins checks out the repository from GitHub.\
+2.Docker image is built using Ubuntu 22.04.\
+3.Shell script is copied and made executable.\
+4.Line ending normalization is enforced for Linux compatibility.\
+5.Container is executed and the script runs inside it.\
 6.Jenkins marks the build successful based on exit code.
 
 ### What the Script Does
