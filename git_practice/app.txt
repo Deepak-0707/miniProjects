@@ -1,0 +1,5 @@
+"Version 1 App"
+
+"Adding Login Feature to the App- Done by login branch"
+"Preparing release"
+Critical bug fixed in 1.0.1

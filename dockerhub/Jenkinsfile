@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+
+    environment {
+        IMAGE_NAME = "myapp"
+    }
+
+    stages {
+        stage('Build Image') {
+            steps {
+                bat "docker build -t %IMAGE_NAME%:%BUILD_NUMBER% ."
+            }
+        }
+
+        stage('Push Image') {
+            steps {
+                withCredentials([
+                    usernamePassword(
+                        credentialsId: 'DockerHubAccessToken',
+                        usernameVariable: 'USER',
+                        passwordVariable: 'PASS'
+                    )
+                ]) {
+                    bat """
+                    echo %PASS% | docker login -u %USER% --password-stdin
+                    docker tag %IMAGE_NAME%:%BUILD_NUMBER% %USER%/%IMAGE_NAME%:%BUILD_NUMBER%
+                    docker push %USER%/%IMAGE_NAME%:%BUILD_NUMBER%
+                    """
+                }
+            }
+        }
+    }
+}
